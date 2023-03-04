@@ -1,6 +1,8 @@
 /Logs
 /UserSettings
 /Library
+# Help from https://sigalambigha.home.blog/2020/03/11/how-to-refresh-gitignore/
+# https://stackoverflow.com/questions/19151247/ignoring-folder-meta-files-on-version-control
 # Meta Files built by Visual Studio
 *.meta
 
