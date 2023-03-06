@@ -345,7 +345,9 @@ GameObject:
   m_Component:
   - component: {fileID: 916316285}
   - component: {fileID: 916316284}
+  - component: {fileID: 916316290}
   - component: {fileID: 916316287}
+  - component: {fileID: 916316291}
   - component: {fileID: 916316286}
   - component: {fileID: 916316289}
   - component: {fileID: 916316288}
@@ -416,7 +418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916316283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.63, z: 0}
   m_LocalScale: {x: 0.0876, y: 0.0876, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -505,6 +507,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &916316290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916316283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfd96bfdb7df404f92e70483d2592e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &916316291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916316283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6908d60f81cc9c84bbd60ef2778b2603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 8
+  gravityScale: 2
+  fallingGravityScale: 8
+  groundCheck: {fileID: 176544257}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &1271723478
 GameObject:
   m_ObjectHideFlags: 0

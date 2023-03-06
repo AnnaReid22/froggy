@@ -4,23 +4,43 @@ using UnityEngine;
 
 public class Jumping : MonoBehaviour
 {
-    
-    public float speed = 1f; 
-    public float horizontalMove = 0f; 
+    public float force = 10; // height of jump 
+    public float gravityScale = 2;
+    public float fallingGravityScale = 10; // how fast we fall 
 
-    // Update is called once per frame
-    void Update()
-    {
-        horizontalMove = speed * Input.GetAxisRaw("Horizontal");
+    public Transform groundCheck; 
+    public LayerMask groundLayer; 
 
-        if (Mathf.Abs(horizontalMove) > 0) { 
-            gameObject.GetComponent<Animator>().SetBool("jump", true);
-        } else {
-            gameObject.GetComponent<Animator>().SetBool("jump", false);
+    bool isGrounded;
+
+    void Update() {
+
+        if (Input.GetKeyDown(KeyCode.Space)) { 
+            if (isGrounded) { // this if statement prevents double jumping 
+                gameObject.GetComponent<Animator>().SetBool("jump", true);
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * force;   
+            }
+        }
+
+        // change gravity for jumping up and falling down 
+        if (gameObject.GetComponent<Rigidbody2D>().velocity.y >= 0)
+        {
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+        }
+        else if (gameObject.GetComponent<Rigidbody2D>().velocity.y < 0)
+        {
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = fallingGravityScale;
         }
     }
 
     private void FixedUpdate() { 
-        transform.Translate(Vector3.right * Time.fixedDeltaTime * horizontalMove);
+        // detect if the player is not on the ground and change the animation to no longer jumping up 
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 1f, groundLayer);
+
+        if (!isGrounded) { 
+            gameObject.GetComponent<Animator>().SetBool("jump", true);
+        } else if (isGrounded) { 
+            gameObject.GetComponent<Animator>().SetBool("jump", false);
+        }
     }
 }
