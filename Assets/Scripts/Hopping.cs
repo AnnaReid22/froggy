@@ -10,11 +10,11 @@ public class Hopping : MonoBehaviour
 
     void Update()
     {
-        horizontalMove = speed * Input.GetAxisRaw("Horizontal");
-        gameObject.GetComponent<Animator>().SetFloat("speed", Mathf.Abs(horizontalMove));
+        horizontalMove = speed * Input.GetAxisRaw("Horizontal"); // arrow key movement
+        gameObject.GetComponent<Animator>().SetFloat("speed", Mathf.Abs(horizontalMove)); // set animation variable 
     }
 
     private void FixedUpdate() { 
-        transform.Translate(Vector3.right * Time.fixedDeltaTime * horizontalMove);
+        transform.Translate(Vector3.right * Time.fixedDeltaTime * horizontalMove); // arrow key movement 
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Jumping : MonoBehaviour
 {
-    public float force = 10; // height of jump 
+    public float force = 8; // height of jump 
     public float gravityScale = 2;
-    public float fallingGravityScale = 10; // how fast we fall 
+    public float fallingGravityScale = 10; // how fast we fall back down 
 
     public Transform groundCheck; 
     public LayerMask groundLayer; 
@@ -17,8 +17,8 @@ public class Jumping : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) { 
             if (isGrounded) { // this if statement prevents double jumping 
-                gameObject.GetComponent<Animator>().SetBool("jump", true);
-                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * force;   
+                gameObject.GetComponent<Animator>().SetBool("jump", true); // set animation variable 
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * force;   // jump up 
             }
         }
 
