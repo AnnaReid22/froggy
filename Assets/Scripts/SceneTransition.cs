@@ -14,7 +14,7 @@ public class SceneTransition : MonoBehaviour
     void Start()
     {
 		Button btn = b.GetComponent<Button>();
-		sunset = GameObject.Find("Background").GetComponent<Animator>();
+		sunset = GameObject.Find("Background_Wide").GetComponent<Animator>();
 		btn.onClick.AddListener(transitionScene);
     }
 
