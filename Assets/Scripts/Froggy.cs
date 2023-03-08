@@ -7,6 +7,7 @@ public class Froggy : MonoBehaviour
 {
     void Start()
     {
+
         Scene scene = SceneManager.GetActiveScene(); // get current scene name 
         if (scene.name == "1_Trash_Scene") { 
             // set starting position in the trash scene
