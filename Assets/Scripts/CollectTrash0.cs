@@ -10,17 +10,16 @@ public class CollectTrash0 : MonoBehaviour
     void Start () {
         // this prevents all other colliders from messing with trash 
         // if clicking stops working or becomes buggy we probably need to ignore another layer
-        Physics.IgnoreLayerCollision(0, 8);
-        Physics.IgnoreLayerCollision(1, 8);
-        Physics.IgnoreLayerCollision(2, 8);
-        Physics.IgnoreLayerCollision(3, 8);
-        Physics.IgnoreLayerCollision(4, 8);
-        Physics.IgnoreLayerCollision(5, 8);
-        Physics.IgnoreLayerCollision(6, 8);
-        Physics.IgnoreLayerCollision(7, 8);
-        Physics.IgnoreLayerCollision(8, 8); 
-        Physics.IgnoreLayerCollision(9, 8);
-        Physics.IgnoreLayerCollision(10, 8);
+        Physics.IgnoreLayerCollision(0, 12);
+        Physics.IgnoreLayerCollision(1, 12);
+        Physics.IgnoreLayerCollision(2, 12);
+        Physics.IgnoreLayerCollision(3, 12);
+        Physics.IgnoreLayerCollision(4, 12);
+        Physics.IgnoreLayerCollision(5, 12);
+        Physics.IgnoreLayerCollision(6, 12);
+        Physics.IgnoreLayerCollision(7, 12);
+        Physics.IgnoreLayerCollision(12, 12); 
+        Physics.IgnoreLayerCollision(10, 12);
 
         myCollider = gameObject.GetComponent<Collider2D>();
     }
@@ -28,7 +27,7 @@ public class CollectTrash0 : MonoBehaviour
     public void Update () { 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0)){ 
+        if (Input.GetMouseButtonDown(0)) { 
             if (myCollider == Physics2D.OverlapPoint(mousePos))
             {
                 deactivate(); 

@@ -32,6 +32,7 @@ public class DragAndDrop : MonoBehaviour
             {
                 canMove = false;
             }
+            
             if (canMove)
             {
                 dragging = true;
