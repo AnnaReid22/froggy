@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectTrash : MonoBehaviour
+public class CollectTrash0 : MonoBehaviour
 {
 
     public Collider2D myCollider;
@@ -25,10 +25,17 @@ public class CollectTrash : MonoBehaviour
         myCollider = gameObject.GetComponent<Collider2D>();
     }
 
-    public void OnMouseDown() {
-        deactivate(); 
-        Score.trash_score += 1;
-        Debug.Log("Trash Score: " + Score.trash_score); // this is just so I can see that it is incrementing the score   
+    public void Update () { 
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetMouseButtonDown(0)){ 
+            if (myCollider == Physics2D.OverlapPoint(mousePos))
+            {
+                deactivate(); 
+                Score.trash_score += 1;
+                Debug.Log("Trash Score: " + Score.trash_score); // this is just so I can see that it is incrementing the score 
+            }
+        }
     }
 
     public void deactivate () {
