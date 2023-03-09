@@ -17,7 +17,7 @@ public class MenuOptions : MonoBehaviour
     public void playGame()
     {
         // load first scene of game
-        UnityEngine.SceneManagement.SceneManager.LoadScene("1_Trash_Scene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("0_1_Intro_Scene");
     }
 
     public void showMainMenu()
