@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/5_Decorate_Scene.unity
     guid: 9cecbd30a915f4ec58e353f59e85ccda
+  - enabled: 1
+    path: Assets/Scenes/6_Score_Scene.unity
+    guid: cc5b6c466272c4be18b6f9dcd0c0a206
   m_configObjects: {}
