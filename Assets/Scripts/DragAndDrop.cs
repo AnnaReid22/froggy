@@ -11,15 +11,27 @@ public class DragAndDrop : MonoBehaviour {
 
     void Start() {
         // change all the 7s to 12s when we apply this to the trash layer (right now I'm testing in the plant layer)
-        Physics.IgnoreLayerCollision(0, 7);
-        Physics.IgnoreLayerCollision(1, 7);
-        Physics.IgnoreLayerCollision(2, 7);
-        Physics.IgnoreLayerCollision(3, 7);
-        Physics.IgnoreLayerCollision(4, 7);
-        Physics.IgnoreLayerCollision(5, 7);
-        Physics.IgnoreLayerCollision(6, 7);
-        Physics.IgnoreLayerCollision(12, 7);
-        Physics.IgnoreLayerCollision(10, 7);
+        Physics.IgnoreLayerCollision(0, 9);
+        Physics.IgnoreLayerCollision(1, 9);
+        Physics.IgnoreLayerCollision(2, 9);
+        Physics.IgnoreLayerCollision(3, 9);
+        Physics.IgnoreLayerCollision(4, 9);
+        Physics.IgnoreLayerCollision(5, 9);
+        Physics.IgnoreLayerCollision(6, 9);
+        Physics.IgnoreLayerCollision(7, 9); 
+        Physics.IgnoreLayerCollision(12, 9);
+        Physics.IgnoreLayerCollision(10, 9);
+
+        Physics2D.IgnoreLayerCollision(0, 9);
+        Physics2D.IgnoreLayerCollision(1, 9);
+        Physics2D.IgnoreLayerCollision(2, 9);
+        Physics2D.IgnoreLayerCollision(3, 9);
+        Physics2D.IgnoreLayerCollision(4, 9);
+        Physics2D.IgnoreLayerCollision(5, 9);
+        Physics2D.IgnoreLayerCollision(6, 9);
+        Physics2D.IgnoreLayerCollision(7, 9); 
+        Physics2D.IgnoreLayerCollision(12, 9);
+        Physics2D.IgnoreLayerCollision(10, 9);
 
         cam = Camera.main;
     }
@@ -29,7 +41,7 @@ public class DragAndDrop : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0)) {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition); 
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity, 1 << 7); 
+            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity, 1 << 9); 
 
             if (hit.collider != null)
             {
@@ -61,5 +73,9 @@ public class DragAndDrop : MonoBehaviour {
             canMove = false;
             dragging = false;
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other) {
+        this.gameObject.SetActive(false);  
     }
 }
