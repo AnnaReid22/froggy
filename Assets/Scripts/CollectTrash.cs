@@ -8,6 +8,7 @@ public class CollectTrash : MonoBehaviour
     //public Collider2D myCollider;
     Camera cam; 
     public Collider2D myCollider;
+	public AudioSource collectAudio;
 
 
     void Start () {
@@ -41,6 +42,7 @@ public class CollectTrash : MonoBehaviour
                     hit.collider.gameObject.SetActive(false); 
                     Score.trash_score += 1;
                     Debug.Log("Trash Score: " + Score.trash_score);
+					collectAudio.Play();
                 //}
             }
         }
