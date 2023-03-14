@@ -12,18 +12,36 @@ EditorBuildSettings:
     path: Assets/Scenes/0_1_Intro_Scene.unity
     guid: 02d60da2dc1064da4add967abe48f430
   - enabled: 1
+    path: Assets/Scenes/1_1_Trash_Intro.unity
+    guid: cd57464a7323849dc833d0e00327092b
+  - enabled: 1
     path: Assets/Scenes/1_Trash_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/2_2_Planting_Intro.unity
+    guid: 0c3fc6c6942fa4941bfcbc2929980a42
   - enabled: 1
     path: Assets/Scenes/2_Planting_Scene.unity
     guid: 818ac2602390e4ab58a7e28e2ae9b9d6
   - enabled: 1
+    path: Assets/Scenes/3_3_Ponds_Intro.unity
+    guid: cad011d1f447f491c98a4ecd14fa23cb
+  - enabled: 1
     path: Assets/Scenes/3_Ponds_Scene.unity
     guid: 9131d03920565484aa26af7e00e99257
+  - enabled: 1
+    path: Assets/Scenes/4_4_Koifish_Intro.unity
+    guid: 536ff5f0899e0455bb64847950e001d8
   - enabled: 1
     path: Assets/Scenes/4_Koifish_Scene.unity
     guid: 736c80683465a426c98c7b6958a8b13a
   - enabled: 1
+    path: Assets/Scenes/5_5_Decorate_Intro.unity
+    guid: 263d5c37148b04f72a4b8f114cf06a31
+  - enabled: 1
     path: Assets/Scenes/5_Decorate_Scene.unity
     guid: 9cecbd30a915f4ec58e353f59e85ccda
+  - enabled: 1
+    path: Assets/Scenes/6_Score_Scene.unity
+    guid: cc5b6c466272c4be18b6f9dcd0c0a206
   m_configObjects: {}
