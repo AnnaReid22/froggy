@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Continue : MonoBehaviour
 {
 	public Button b;
+	public string NextScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,6 @@ public class Continue : MonoBehaviour
 	
 	void continueGame()
 	{
-		SceneManager.LoadScene("1_Trash_Scene");
+		SceneManager.LoadScene(NextScene);
 	}
 }
