@@ -58,9 +58,6 @@ public class DragAndDrop : MonoBehaviour {
                 dragging = true;
             }
 
-            if (hit.collider.name == "") {
-            }
-
         }
 
         if (dragging) {

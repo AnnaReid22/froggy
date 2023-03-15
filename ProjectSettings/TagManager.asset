@@ -5,6 +5,34 @@ TagManager:
   serializedVersion: 2
   tags:
   - Map
+  - lily_purple
+  - lily_blue
+  - lily_pink
+  - lily_orange
+  - daisy_purple
+  - daisy_blue
+  - daisy_orange
+  - daisy_pink
+  - bamboo1
+  - bamboo2
+  - bamboo3
+  - tree1
+  - tree2
+  - tree3
+  - bamboo_sprout_1
+  - bamboo_sprout_2
+  - bamboo_sprout_3
+  - tree_sprout_1
+  - tree_sprout_2
+  - tree_sprout_3
+  - orange_daisy_sprout
+  - pink_daisy_sprout
+  - blue_daisy_sprout
+  - purple_daisy_sprout
+  - orange_lily_sprout
+  - pink_lily_sprout
+  - purple_lily_sprout
+  - blue_lily_sprout
   layers:
   - Default
   - TransparentFX
@@ -17,7 +45,7 @@ TagManager:
   - Recyling
   - Drag & Drop
   - Ground
-  - 
+  - seeds
   - Trash
   - 
   - 
