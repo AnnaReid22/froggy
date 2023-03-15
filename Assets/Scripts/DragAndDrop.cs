@@ -8,6 +8,7 @@ public class DragAndDrop : MonoBehaviour {
     public bool dragging;
     Camera cam;
     public string objectName; 
+    public AudioSource collectAudio;
 
     void Start() {
         // change all the 7s to 12s when we apply this to the trash layer (right now I'm testing in the plant layer)
@@ -75,6 +76,9 @@ public class DragAndDrop : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
+        Score.trash_score += 1;
+        Debug.Log("Trash Score: " + Score.trash_score);
         this.gameObject.SetActive(false);  
+        collectAudio.Play();
     }
 }

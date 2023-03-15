@@ -459,6 +459,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!50 &195330699
 Rigidbody2D:
   serializedVersion: 4
@@ -787,6 +788,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1076,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 0}
 --- !u!212 &885105133
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1837,6 +1840,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!50 &993347611
 Rigidbody2D:
   serializedVersion: 4
@@ -2150,6 +2154,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!50 &1199586611
 Rigidbody2D:
   serializedVersion: 4
@@ -2343,6 +2348,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!50 &1277685808
 Rigidbody2D:
   serializedVersion: 4
@@ -2523,6 +2529,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!50 &1311417233
 Rigidbody2D:
   serializedVersion: 4
@@ -2864,6 +2871,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!1 &1555825849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,6 +3036,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!50 &1555825858
 Rigidbody2D:
   serializedVersion: 4
@@ -3481,6 +3490,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!50 &1984287169
 Rigidbody2D:
   serializedVersion: 4
@@ -3537,6 +3547,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 0}
 --- !u!212 &2019678105
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4107,6 +4118,7 @@ MonoBehaviour:
   canMove: 0
   dragging: 0
   objectName: 
+  collectAudio: {fileID: 1080534284}
 --- !u!50 &2064064905
 Rigidbody2D:
   serializedVersion: 4
