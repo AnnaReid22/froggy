@@ -19,6 +19,7 @@ public class DragAndDrop : MonoBehaviour {
         Physics.IgnoreLayerCollision(5, 9);
         Physics.IgnoreLayerCollision(6, 9);
         Physics.IgnoreLayerCollision(7, 9); 
+        Physics.IgnoreLayerCollision(9, 9); 
         Physics.IgnoreLayerCollision(12, 9);
         Physics.IgnoreLayerCollision(10, 9);
 
@@ -30,6 +31,7 @@ public class DragAndDrop : MonoBehaviour {
         Physics2D.IgnoreLayerCollision(5, 9);
         Physics2D.IgnoreLayerCollision(6, 9);
         Physics2D.IgnoreLayerCollision(7, 9); 
+        Physics2D.IgnoreLayerCollision(9, 9); 
         Physics2D.IgnoreLayerCollision(12, 9);
         Physics2D.IgnoreLayerCollision(10, 9);
 
