@@ -33,6 +33,9 @@ TagManager:
   - pink_lily_sprout
   - purple_lily_sprout
   - blue_lily_sprout
+  - Rock
+  - Bucket
+  - FinishedPond
   layers:
   - Default
   - TransparentFX
