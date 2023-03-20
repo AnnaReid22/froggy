@@ -64,6 +64,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[4].SetActive(true); 
                         sprouts[4].transform.position = position; 
+                        locations.orange_daisy = sprouts[4].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -73,6 +74,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[5].SetActive(true); 
                         sprouts[5].transform.position = position; 
+                        locations.pink_daisy = sprouts[5].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -82,6 +84,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[6].SetActive(true); 
                         sprouts[6].transform.position = position; 
+                        locations.blue_daisy = sprouts[6].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -91,6 +94,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[7].SetActive(true); 
                         sprouts[7].transform.position = position; 
+                        locations.purple_daisy = sprouts[7].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -100,6 +104,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[8].SetActive(true); 
                         sprouts[8].transform.position = position; 
+                        locations.orange_lily = sprouts[8].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -109,6 +114,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[9].SetActive(true); 
                         sprouts[9].transform.position = position; 
+                        locations.pink_lily = sprouts[9].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -118,6 +124,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[10].SetActive(true); 
                         sprouts[10].transform.position = position; 
+                        locations.blue_lily = sprouts[10].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -127,6 +134,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[11].SetActive(true); 
                         sprouts[11].transform.position = position; 
+                        locations.purple_lily = sprouts[11].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -139,6 +147,7 @@ public class PlantSeeds : MonoBehaviour
                         seed.SetActive(false); 
                         sprouts[0].SetActive(true); 
                         sprouts[0].transform.position = position; 
+                        locations.tree1 = sprouts[0].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -148,6 +157,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[1].SetActive(true); 
                         sprouts[1].transform.position = position; 
+                        locations.tree2 = sprouts[1].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -157,6 +167,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[2].SetActive(true); 
                         sprouts[2].transform.position = position; 
+                        locations.tree3 = sprouts[2].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
@@ -166,6 +177,7 @@ public class PlantSeeds : MonoBehaviour
                     if (seed.transform.position.y < 0) {
                         sprouts[3].SetActive(true); 
                         sprouts[3].transform.position = position; 
+                        locations.tree4 = sprouts[3].transform.position; 
                         Score.planting_score += 2;
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
