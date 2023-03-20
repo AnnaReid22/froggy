@@ -2,27 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragAndDrop : MonoBehaviour {
+public class DragAndDropFish : MonoBehaviour {
 
     public bool canMove;
     public bool dragging;
     Camera cam;
     public string objectName; 
-    public AudioSource collectAudio;
+    public AudioSource goodAudio;
+	public AudioSource badAudio;
 
     void Start() {
-        // change all the 7s to 12s when we apply this to the trash layer (right now I'm testing in the plant layer)
-        Physics.IgnoreLayerCollision(0, 9);
-        Physics.IgnoreLayerCollision(1, 9);
-        Physics.IgnoreLayerCollision(2, 9);
-        Physics.IgnoreLayerCollision(3, 9);
-        Physics.IgnoreLayerCollision(4, 9);
-        Physics.IgnoreLayerCollision(5, 9);
-        Physics.IgnoreLayerCollision(6, 9);
-        Physics.IgnoreLayerCollision(7, 9); 
-        Physics.IgnoreLayerCollision(9, 9); 
-        Physics.IgnoreLayerCollision(12, 9);
-        Physics.IgnoreLayerCollision(10, 9);
 
         Physics2D.IgnoreLayerCollision(0, 9);
         Physics2D.IgnoreLayerCollision(1, 9);
@@ -45,7 +34,6 @@ public class DragAndDrop : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition); 
             RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity, 1 << 9); 
-
             if (hit.collider != null)
             {
                 canMove = true;
@@ -76,9 +64,15 @@ public class DragAndDrop : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        Score.trash_score += 1;
-        Debug.Log("Trash Score: " + Score.trash_score);
-        this.gameObject.SetActive(false);  
-        collectAudio.Play();
+        Score.koifish_score += 5;
+        Debug.Log("Koi Score Up: " + Score.koifish_score);
+        goodAudio.Play();
     }
+	
+	void OnCollisionExit2D(Collision2D col)
+	{
+		Score.koifish_score -= 5;
+		Debug.Log("Koi Score Down: " + Score.koifish_score);
+		badAudio.Play();
+	}
 }
