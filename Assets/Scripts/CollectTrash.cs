@@ -40,7 +40,7 @@ public class CollectTrash : MonoBehaviour
             if (hit.collider != null) {
                 //if (hit.collider.gameObject.layer == 12) {
                     hit.collider.gameObject.SetActive(false); 
-                    Score.trash_score += 1;
+                    Score.trash_score += 2;
                     Debug.Log("Trash Score: " + Score.trash_score);
 					collectAudio.Play();
                 //}
