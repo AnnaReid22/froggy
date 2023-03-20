@@ -59,7 +59,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[5]) {
                             sprouts[6].SetActive(true); 
                             sprouts[6].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "daisy_pink") {
@@ -68,7 +68,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[6]) {
                             sprouts[7].SetActive(true); 
                             sprouts[7].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "daisy_blue") {
@@ -77,7 +77,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[4]) {
                             sprouts[8].SetActive(true); 
                             sprouts[8].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "daisy_purple") {
@@ -86,7 +86,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[7]) {
                             sprouts[9].SetActive(true); 
                             sprouts[9].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "lily_orange") {
@@ -95,7 +95,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[2]) {
                             sprouts[10].SetActive(true); 
                             sprouts[10].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "lily_pink") {
@@ -104,7 +104,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[1]) {
                             sprouts[11].SetActive(true); 
                             sprouts[11].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "lily_blue") {
@@ -113,7 +113,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[3]) {
                             sprouts[12].SetActive(true); 
                             sprouts[12].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "lily_purple") {
@@ -122,7 +122,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[0]) {
                             sprouts[13].SetActive(true); 
                             sprouts[13].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     }
@@ -134,7 +134,7 @@ public class PlantSeeds : MonoBehaviour
                             seed.SetActive(false); 
                             sprouts[3].SetActive(true); 
                             sprouts[3].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "tree2") {
@@ -143,7 +143,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[12]) {
                             sprouts[4].SetActive(true); 
                             sprouts[4].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "tree3") {
@@ -152,7 +152,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[13]) {
                             sprouts[5].SetActive(true); 
                             sprouts[5].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     }
@@ -163,7 +163,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[8]) {
                             sprouts[0].SetActive(true); 
                             sprouts[0].transform.position = position;
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score); 
                         }
                     } else if (seed.tag == "bamboo2") {
@@ -172,7 +172,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[9]) {
                             sprouts[1].SetActive(true); 
                             sprouts[1].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     } else if (seed.tag == "bamboo3") {
@@ -181,7 +181,7 @@ public class PlantSeeds : MonoBehaviour
                         if (seed.transform.position != originalPos[10]) {
                             sprouts[2].SetActive(true); 
                             sprouts[2].transform.position = position; 
-                            Score.planting_score += 1;
+                            Score.planting_score += 2;
                             Debug.Log("Planting Score: " + Score.planting_score);
                         }
                     }

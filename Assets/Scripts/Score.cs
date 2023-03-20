@@ -28,7 +28,12 @@ public class Score : MonoBehaviour
     {
 		if ("6_Score_Scene" == SceneManager.GetActiveScene().name)
 		{
-			total_score = (trash_score + planting_score + pond_score + koifish_score + decorations_score) / max_total_score;
+			Debug.Log("planting_score: " + planting_score); 
+			Debug.Log("trash_score: " + trash_score); 
+			Debug.Log("koifish_score: " + koifish_score); 
+			Debug.Log("decorations_score: " + decorations_score); 
+
+			total_score = (trash_score * 2 + planting_score + pond_score + koifish_score + decorations_score) / max_total_score;
 			result.text = "Your Score is " + total_score.ToString();
 			
 		}
