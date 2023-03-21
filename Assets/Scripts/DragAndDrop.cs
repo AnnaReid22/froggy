@@ -44,13 +44,13 @@ public class DragAndDrop : MonoBehaviour {
         Physics2D.IgnoreLayerCollision(10, 9);
 
         cam = Camera.main;
-        if(SceneManager.GetActiveScene().name == "1_Trash_Scene")
-        {
-            collectAudio = GameObject.Find("positive_sound_froggy").GetComponent<AudioSource>();
-			a = GameObject.Find("max_score").GetComponent<AudioSource>();
-			GameObject canvas = GameObject.Find("Canvas");
-		    displayText = canvas.transform.Find("Text (TMP) (1)").gameObject;
-        }
+//        if(SceneManager.GetActiveScene().name == "1_Trash_Scene")
+//        {
+		collectAudio = GameObject.Find("positive_sound_froggy").GetComponent<AudioSource>();
+		a = GameObject.Find("max_score").GetComponent<AudioSource>();
+		GameObject canvas = GameObject.Find("Canvas");
+		displayText = canvas.transform.Find("Text (TMP) (1)").gameObject;
+//        }
 		displayText.SetActive(false);
     }
 

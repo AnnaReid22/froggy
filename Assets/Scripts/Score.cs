@@ -16,6 +16,7 @@ public class Score : MonoBehaviour
 	public TMP_Text result;
 	
 	private float max_total_score = 100.0f;
+	private float max_room_score_float = 20.0f;
 	
 	public static float total_score = 0.0f;
 	
@@ -34,9 +35,21 @@ public class Score : MonoBehaviour
 			Debug.Log("koifish_score: " + koifish_score); 
 			Debug.Log("decorations_score: " + decorations_score); 
 
-			total_score = (trash_score + planting_score + pond_score + koifish_score + decorations_score) / max_total_score;
-			result.text = "Your Score is " + total_score.ToString();
+			total_score = ((trash_score + planting_score + pond_score + koifish_score + decorations_score) / max_total_score) * 100;
 			
+			float trash_score_result = (trash_score / max_room_score_float) * 100;
+			float planting_score_result = (planting_score / max_room_score_float) * 100;
+			float pond_score_result = (pond_score / max_room_score_float) * 100;
+			float koifish_score_result = (koifish_score / max_room_score_float) * 100;
+			float decorations_score_result = (decorations_score / max_room_score_float) * 100;
+			
+			result.text = "Your Score is " + total_score.ToString() + "%" + System.Environment.NewLine + 
+							"Score Breakdown: " + System.Environment.NewLine + 
+							"Trash Cleanup: " + trash_score_result.ToString() + "%" + System.Environment.NewLine +
+							"Planting Seeds: " + planting_score_result.ToString() + "%" + System.Environment.NewLine +
+							"Making Pond: " + pond_score_result.ToString() + "%" + System.Environment.NewLine +
+							"Helping Koifish: " + koifish_score_result.ToString() + "%" + System.Environment.NewLine +
+							"Decorating: " + decorations_score_result.ToString() + "%" + System.Environment.NewLine;
 		}
 		else
 		{
