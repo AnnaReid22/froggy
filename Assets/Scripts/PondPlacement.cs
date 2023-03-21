@@ -40,7 +40,7 @@ public class PondPlacement : MonoBehaviour
         if (bucket != null && bucket.transform.position.y < 0)
         {
             Score.pond_score = GetScore(rocks);
-			if(Score.pond_score >= Score.max_room_score)
+			if(Score.pond_score >= Score.max_pond_score)
 			{
 				a.Play();
 				displayText.SetActive(true);

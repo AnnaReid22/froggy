@@ -78,7 +78,7 @@ public class DragAndDropFish : MonoBehaviour {
         Score.koifish_score += 10;
         Debug.Log("Koi Score Up: " + Score.koifish_score);
         goodAudio.Play();
-		if (Score.koifish_score == Score.max_room_score)
+		if (Score.koifish_score == Score.max_koifish_score)
 		{
 			a.Play();
 			displayText.SetActive(true);

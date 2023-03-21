@@ -96,7 +96,7 @@ public class DragAndDrop : MonoBehaviour {
         Debug.Log("Trash Score: " + Score.trash_score);
         this.gameObject.SetActive(false);  
         collectAudio.Play();
-		if (Score.trash_score == Score.max_room_score)
+		if (Score.trash_score >= Score.max_trash_score)
 		{
 			a.Play();
 			displayText.SetActive(true);

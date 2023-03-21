@@ -212,7 +212,7 @@ public class PlantSeeds : MonoBehaviour
             } else {
                 if(seed != null){seed.SetActive(false);}
             }
-			if(Score.planting_score >= Score.max_room_score)
+			if(Score.planting_score >= Score.max_planting_score)
 			{
 				a.Play();
 				displayText.SetActive(true);
