@@ -17,12 +17,14 @@ public class locations : MonoBehaviour
     public static Vector3 tree2; 
     public static Vector3 tree3; 
     public static Vector3 tree4; 
+    public static Vector3 pond_loc; 
 
     private List<GameObject> plants;
+    private GameObject pond;
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
             plants = new List<GameObject> {GameObject.FindWithTag("lily_purple"), GameObject.FindWithTag("lily_pink"), GameObject.FindWithTag("lily_orange"), 
                 GameObject.FindWithTag("lily_blue"), GameObject.FindWithTag("daisy_blue"), GameObject.FindWithTag("daisy_orange"), 
                 GameObject.FindWithTag("daisy_pink"), GameObject.FindWithTag("daisy_purple"),
@@ -103,6 +105,11 @@ public class locations : MonoBehaviour
                         plant.SetActive(false); 
                     }
                 }
+            }
+
+            if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name || "5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
+                pond = GameObject.FindWithTag("FinishedPond"); 
+                pond.transform.position = pond_loc;
             }
     }
 
