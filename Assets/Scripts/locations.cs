@@ -24,10 +24,11 @@ public class locations : MonoBehaviour
     public static Vector3 adult_fish_loc_1;   
     public static Vector3 baby_fish_loc_2; // in pond
     public static Vector3 adult_fish_loc_2; 
+    public static Vector3 rock_loc; 
 
     private List<GameObject> plants;
+    private GameObject[] rocks; 
     private GameObject pond, puddle1, puddle2, baby_fish, adult_fish;
-    private List<GameObject> invalidPlants = new List<GameObject>(); 
 
     public const string front_plants = "front_plants"; 
     public int sortingOrder = 0; 
@@ -36,9 +37,15 @@ public class locations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
+            plants = new List<GameObject> {GameObject.FindWithTag("lily_purple"), GameObject.FindWithTag("lily_pink"), GameObject.FindWithTag("lily_orange"), 
+                GameObject.FindWithTag("lily_blue"), GameObject.FindWithTag("daisy_blue"), GameObject.FindWithTag("daisy_orange"), 
+                GameObject.FindWithTag("daisy_pink"), GameObject.FindWithTag("daisy_purple"),
+                GameObject.FindWithTag("tree1"), GameObject.FindWithTag("tree2"), GameObject.FindWithTag("tree3"), GameObject.FindWithTag("tree4")}; 
+
             if ("3_Ponds_Scene" == SceneManager.GetActiveScene().name) {
-                pond_loc = new Vector3(0, 0, 0); 
+                pond_loc = new Vector3(0, 0, 0);
             } 
+            
             if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name || "5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
                 pond = GameObject.FindWithTag("FinishedPond"); 
                 pond.transform.position = pond_loc;
@@ -86,11 +93,6 @@ public class locations : MonoBehaviour
                 adult_fish.transform.position = adult_fish_loc_2; 
                 baby_fish.transform.position = baby_fish_loc_2; 
             }
-
-            plants = new List<GameObject> {GameObject.FindWithTag("lily_purple"), GameObject.FindWithTag("lily_pink"), GameObject.FindWithTag("lily_orange"), 
-                GameObject.FindWithTag("lily_blue"), GameObject.FindWithTag("daisy_blue"), GameObject.FindWithTag("daisy_orange"), 
-                GameObject.FindWithTag("daisy_pink"), GameObject.FindWithTag("daisy_purple"),
-                GameObject.FindWithTag("tree1"), GameObject.FindWithTag("tree2"), GameObject.FindWithTag("tree3"), GameObject.FindWithTag("tree4")}; 
 
             foreach (GameObject plant in plants) {
                 if (plant.tag == "daisy_orange") {
@@ -168,12 +170,14 @@ public class locations : MonoBehaviour
                     }
                 }
 
-                if (plant.transform.position.y <= -1) { 
+                // put this in plant seeds
+                if (plant.transform.position.y < -1.12) { 
                     sprite = plant.GetComponent<SpriteRenderer>(); 
                     sprite.sortingOrder = sortingOrder; 
                     sprite.sortingLayerName = front_plants; 
                 }
             }
+
 
         /*Debug.Log("Count " + invalidPlants.Count); 
         if (invalidPlants.Count > 0) {
@@ -192,11 +196,9 @@ public class locations : MonoBehaviour
                 if ((plant.transform.position.x < pond_loc.x - 3.25) || (plant.transform.position.x > pond_loc.x + 3.25)) {
                     
                 } else {
-                    invalidPlants.Add(plant); 
                     plant.SetActive(false); 
                 }
             }
         }
-        
     }
 }
