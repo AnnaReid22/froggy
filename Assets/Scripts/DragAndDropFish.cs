@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DragAndDropFish : MonoBehaviour {
 
+	public AudioSource a;
+	public GameObject displayText;
     public bool canMove;
     public bool dragging;
     Camera cam;
@@ -12,6 +17,7 @@ public class DragAndDropFish : MonoBehaviour {
 	public AudioSource badAudio;
 
     void Start() {
+		displayText.SetActive(false);
 
         Physics2D.IgnoreLayerCollision(0, 9);
         Physics2D.IgnoreLayerCollision(1, 9);
@@ -69,14 +75,20 @@ public class DragAndDropFish : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        Score.koifish_score += 5;
+        Score.koifish_score += 10;
         Debug.Log("Koi Score Up: " + Score.koifish_score);
         goodAudio.Play();
+		if (Score.koifish_score == Score.max_room_score)
+		{
+			a.Play();
+			displayText.SetActive(true);
+		}
     }
 	
 	void OnCollisionExit2D(Collision2D col)
 	{
-		Score.koifish_score -= 5;
+		Score.koifish_score -= 10;
+		displayText.SetActive(false);
 		Debug.Log("Koi Score Down: " + Score.koifish_score);
 		badAudio.Play();
 	}

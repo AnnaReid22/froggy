@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DragAndDrop : MonoBehaviour {
 
-    public bool canMove;
+    public GameObject displayText;
+	public AudioSource a;
+	public bool canMove;
     public bool dragging;
     Camera cam;
     public string objectName; 
     public AudioSource collectAudio;
 
     void Start() {
+//		displayText.SetActive(false);
         // change all the 7s to 12s when we apply this to the trash layer (right now I'm testing in the plant layer)
         Physics.IgnoreLayerCollision(0, 9);
         Physics.IgnoreLayerCollision(1, 9);
@@ -41,7 +47,11 @@ public class DragAndDrop : MonoBehaviour {
         if(SceneManager.GetActiveScene().name == "1_Trash_Scene")
         {
             collectAudio = GameObject.Find("positive_sound_froggy").GetComponent<AudioSource>();
+			a = GameObject.Find("max_score").GetComponent<AudioSource>();
+			GameObject canvas = GameObject.Find("Canvas");
+		    displayText = canvas.transform.Find("Text (TMP) (1)").gameObject;
         }
+		displayText.SetActive(false);
     }
 
     void Update() {
@@ -81,9 +91,19 @@ public class DragAndDrop : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        Score.trash_score += 1;
+        Score.trash_score += 2;
+
         Debug.Log("Trash Score: " + Score.trash_score);
         this.gameObject.SetActive(false);  
         collectAudio.Play();
+		if (Score.trash_score == Score.max_room_score)
+		{
+			a.Play();
+			displayText.SetActive(true);
+		}
+		else
+		{
+			displayText.SetActive(false);
+		}
     }
 }

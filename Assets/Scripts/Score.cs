@@ -7,7 +7,8 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    public static int trash_score = 0;
+	public static int trash_score = 0;
+	public static int max_room_score = 20;
 	public static int planting_score = 0;
 	public static int pond_score = 0;
 	public static int koifish_score = 0;
@@ -20,7 +21,6 @@ public class Score : MonoBehaviour
 	
 	void Start()
 	{
-		
 	}
 	
 	    // Update is called once per frame
@@ -34,7 +34,7 @@ public class Score : MonoBehaviour
 			Debug.Log("koifish_score: " + koifish_score); 
 			Debug.Log("decorations_score: " + decorations_score); 
 
-			total_score = (trash_score * 2 + planting_score + pond_score + koifish_score + decorations_score) / max_total_score;
+			total_score = (trash_score + planting_score + pond_score + koifish_score + decorations_score) / max_total_score;
 			result.text = "Your Score is " + total_score.ToString();
 			
 		}
