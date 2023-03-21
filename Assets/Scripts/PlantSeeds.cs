@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlantSeeds : MonoBehaviour
 {
-
+	public GameObject displayText;
+	public AudioSource a;
     public Button btn; 
     private  List<GameObject> seeds; 
     private List<GameObject> sprouts; 
@@ -57,6 +58,11 @@ public class PlantSeeds : MonoBehaviour
 
         cam = Camera.main; 
         btn.onClick.AddListener(plantSeeds);
+
+		a = GameObject.Find("max_score").GetComponent<AudioSource>();
+		GameObject canvas = GameObject.Find("Canvas");
+		displayText = canvas.transform.Find("Text (TMP) (1)").gameObject;
+		displayText.SetActive(false);
     }
 
     void Update()
@@ -206,6 +212,15 @@ public class PlantSeeds : MonoBehaviour
             } else {
                 if(seed != null){seed.SetActive(false);}
             }
+			if(Score.planting_score >= Score.max_planting_score)
+			{
+				a.Play();
+				displayText.SetActive(true);
+			}
+			else
+			{
+				displayText.SetActive(false);
+			}
         }
     }
 }

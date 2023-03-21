@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PondPlacement : MonoBehaviour
 {
+	public GameObject displayText;
+	public AudioSource a;
     public GameObject[] rocks; // list of rock objects in the scene
     public GameObject bucket; // water bucket to trigger completed pond
     public GameObject pond; // finished pond object, initially not active in scene
@@ -22,6 +24,10 @@ public class PondPlacement : MonoBehaviour
         pondImage.enabled = false;
         rocks = GameObject.FindGameObjectsWithTag("Rock");
         pond = GameObject.FindWithTag("FinishedPond");
+		a = GameObject.Find("max_score").GetComponent<AudioSource>();
+		GameObject canvas = GameObject.Find("Canvas");
+		displayText = canvas.transform.Find("Text (TMP) (1)").gameObject;
+		displayText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +40,15 @@ public class PondPlacement : MonoBehaviour
         if (bucket != null && bucket.transform.position.y < 0)
         {
             Score.pond_score = GetScore(rocks);
+			if(Score.pond_score >= Score.max_pond_score)
+			{
+				a.Play();
+				displayText.SetActive(true);
+			}
+			else
+			{
+				displayText.SetActive(false);
+			}
             centerCoord = FindPondCenter();
             foreach (GameObject rock in rocks)
             {
