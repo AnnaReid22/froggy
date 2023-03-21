@@ -63,7 +63,7 @@ public class PondPlacement : MonoBehaviour
 
     public int GetScore(GameObject[] rocks)
     {
-        int score = 20; // total possible score
+        int score = 30; // total possible score
 
         foreach (GameObject rock1 in rocks)
         {
