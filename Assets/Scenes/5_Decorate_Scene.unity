@@ -1967,7 +1967,7 @@ GameObject:
   - component: {fileID: 1345032987}
   m_Layer: 0
   m_Name: baby_koi_fish
-  m_TagString: Untagged
+  m_TagString: baby_fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2768,7 +2768,7 @@ GameObject:
   - component: {fileID: 2140287837}
   m_Layer: 0
   m_Name: koi_fish
-  m_TagString: Untagged
+  m_TagString: adult_fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
