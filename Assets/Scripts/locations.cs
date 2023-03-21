@@ -124,7 +124,33 @@ public class locations : MonoBehaviour
                 adult_fish = GameObject.FindWithTag("adult_fish");
                 baby_fish = GameObject.FindWithTag("baby_fish");
 
-                //puddle1.transform.position; 
+                if (pond_loc.x - 14 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 14, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 14, pond_loc.y, 0);
+                }  else if (pond_loc.x - 10 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 10, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 10, pond_loc.y, 0);
+                } else if (pond_loc.x - 5 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 5, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 5, pond_loc.y, 0);
+                } else {
+                    puddle1.transform.position = new Vector3(pond_loc.x + 28, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x + 28, pond_loc.y, 0);
+                }
+
+                if (pond_loc.x + 14 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 14, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 14, pond_loc.y, 0);
+                } else if (pond_loc.x + 10 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 10, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 10, pond_loc.y, 0);
+                } else if (pond_loc.x + 5 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 5, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 5, pond_loc.y, 0);
+                } else {
+                    puddle2.transform.position = new Vector3(pond_loc.x - 28, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x - 28, pond_loc.y, 0);   
+                }
             }
 
             if ("5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
