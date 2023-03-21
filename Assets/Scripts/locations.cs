@@ -24,9 +24,15 @@ public class locations : MonoBehaviour
     public static Vector3 adult_fish_loc_1;   
     public static Vector3 baby_fish_loc_2; // in pond
     public static Vector3 adult_fish_loc_2; 
+    public static Vector3 rock_loc; 
 
     private List<GameObject> plants;
+    private GameObject[] rocks; 
     private GameObject pond, puddle1, puddle2, baby_fish, adult_fish;
+
+    public const string front_plants = "front_plants"; 
+    public int sortingOrder = 0; 
+    private SpriteRenderer sprite; 
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +41,58 @@ public class locations : MonoBehaviour
                 GameObject.FindWithTag("lily_blue"), GameObject.FindWithTag("daisy_blue"), GameObject.FindWithTag("daisy_orange"), 
                 GameObject.FindWithTag("daisy_pink"), GameObject.FindWithTag("daisy_purple"),
                 GameObject.FindWithTag("tree1"), GameObject.FindWithTag("tree2"), GameObject.FindWithTag("tree3"), GameObject.FindWithTag("tree4")}; 
+
+            if ("3_Ponds_Scene" == SceneManager.GetActiveScene().name) {
+                pond_loc = new Vector3(0, 0, 0);
+            } 
+            
+            if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name || "5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
+                pond = GameObject.FindWithTag("FinishedPond"); 
+                pond.transform.position = pond_loc;
+            }
+
+            if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name) {
+                puddle1 = GameObject.FindWithTag("puddle1");
+                puddle2 = GameObject.FindWithTag("puddle2");
+                adult_fish = GameObject.FindWithTag("adult_fish");
+                baby_fish = GameObject.FindWithTag("baby_fish");
+
+                if (pond_loc.x - 14 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 14, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 14, pond_loc.y, 0);
+                }  else if (pond_loc.x - 10 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 10, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 10, pond_loc.y, 0);
+                } else if (pond_loc.x - 5 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 5, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 5, pond_loc.y, 0);
+                } else {
+                    puddle1.transform.position = new Vector3(pond_loc.x + 28, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x + 28, pond_loc.y, 0);
+                }
+
+                if (pond_loc.x + 14 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 14, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 14, pond_loc.y, 0);
+                } else if (pond_loc.x + 10 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 10, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 10, pond_loc.y, 0);
+                } else if (pond_loc.x + 5 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 5, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 5, pond_loc.y, 0);
+                } else {
+                    puddle2.transform.position = new Vector3(pond_loc.x - 28, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x - 28, pond_loc.y, 0);   
+                }
+            }
+
+            if ("5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
+                adult_fish = GameObject.FindWithTag("adult_fish");
+                baby_fish = GameObject.FindWithTag("baby_fish");
+
+                adult_fish.transform.position = adult_fish_loc_2; 
+                baby_fish.transform.position = baby_fish_loc_2; 
+            }
 
             foreach (GameObject plant in plants) {
                 if (plant.tag == "daisy_orange") {
@@ -111,61 +169,36 @@ public class locations : MonoBehaviour
                         plant.SetActive(false); 
                     }
                 }
-            }
 
-            if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name || "5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
-                pond = GameObject.FindWithTag("FinishedPond"); 
-                pond.transform.position = pond_loc;
-            }
-
-            if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name) {
-                puddle1 = GameObject.FindWithTag("puddle1");
-                puddle2 = GameObject.FindWithTag("puddle2");
-                adult_fish = GameObject.FindWithTag("adult_fish");
-                baby_fish = GameObject.FindWithTag("baby_fish");
-
-                if (pond_loc.x - 14 >= -18) {
-                    puddle1.transform.position = new Vector3(pond_loc.x - 14, pond_loc.y, 0);
-                    adult_fish.transform.position = new Vector3(pond_loc.x - 14, pond_loc.y, 0);
-                }  else if (pond_loc.x - 10 >= -18) {
-                    puddle1.transform.position = new Vector3(pond_loc.x - 10, pond_loc.y, 0);
-                    adult_fish.transform.position = new Vector3(pond_loc.x - 10, pond_loc.y, 0);
-                } else if (pond_loc.x - 5 >= -18) {
-                    puddle1.transform.position = new Vector3(pond_loc.x - 5, pond_loc.y, 0);
-                    adult_fish.transform.position = new Vector3(pond_loc.x - 5, pond_loc.y, 0);
-                } else {
-                    puddle1.transform.position = new Vector3(pond_loc.x + 28, pond_loc.y, 0);
-                    adult_fish.transform.position = new Vector3(pond_loc.x + 28, pond_loc.y, 0);
-                }
-
-                if (pond_loc.x + 14 <= 18) {
-                    puddle2.transform.position = new Vector3(pond_loc.x + 14, pond_loc.y, 0);
-                    baby_fish.transform.position = new Vector3(pond_loc.x + 14, pond_loc.y, 0);
-                } else if (pond_loc.x + 10 <= 18) {
-                    puddle2.transform.position = new Vector3(pond_loc.x + 10, pond_loc.y, 0);
-                    baby_fish.transform.position = new Vector3(pond_loc.x + 10, pond_loc.y, 0);
-                } else if (pond_loc.x + 5 <= 18) {
-                    puddle2.transform.position = new Vector3(pond_loc.x + 5, pond_loc.y, 0);
-                    baby_fish.transform.position = new Vector3(pond_loc.x + 5, pond_loc.y, 0);
-                } else {
-                    puddle2.transform.position = new Vector3(pond_loc.x - 28, pond_loc.y, 0);
-                    baby_fish.transform.position = new Vector3(pond_loc.x - 28, pond_loc.y, 0);   
+                // put this in plant seeds
+                if (plant.transform.position.y < -1.12) { 
+                    sprite = plant.GetComponent<SpriteRenderer>(); 
+                    sprite.sortingOrder = sortingOrder; 
+                    sprite.sortingLayerName = front_plants; 
                 }
             }
 
-            if ("5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
-                adult_fish = GameObject.FindWithTag("adult_fish");
-                baby_fish = GameObject.FindWithTag("baby_fish");
 
-                adult_fish.transform.position = adult_fish_loc_2; 
-                baby_fish.transform.position = baby_fish_loc_2; 
+        /*Debug.Log("Count " + invalidPlants.Count); 
+        if (invalidPlants.Count > 0) {
+            foreach(GameObject invalid in invalidPlants) {
+                invalid.SetActive(false); 
             }
+        }*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+        if (pond_loc != new Vector3(0, 0, 0)) { 
+            foreach (GameObject plant in plants) {
+                Debug.Log(plant.transform.position.x); 
+                if ((plant.transform.position.x < pond_loc.x - 3.25) || (plant.transform.position.x > pond_loc.x + 3.25)) {
+                    
+                } else {
+                    plant.SetActive(false); 
+                }
+            }
+        }
     }
 }
