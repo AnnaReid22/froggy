@@ -33,6 +33,7 @@ public class PondPlacement : MonoBehaviour
 
         if (bucket != null && bucket.transform.position.y < 0)
         {
+            Score.pond_score = GetScore(rocks);
             centerCoord = FindPondCenter();
             foreach (GameObject rock in rocks)
             {
@@ -42,6 +43,38 @@ public class PondPlacement : MonoBehaviour
             pondImage.enabled = true;
             bucket.SetActive(false);
         }
+    }
+
+    public int GetScore(GameObject[] rocks)
+    {
+        int score = 30; // total possible score
+
+        foreach (GameObject rock1 in rocks)
+        {
+            int colliderCount = 0;
+            PolygonCollider2D collider1 = rock1.GetComponent<PolygonCollider2D>();
+            foreach (GameObject rock2 in rocks)
+            {
+                if (rock1 == rock2){continue;}
+                
+                PolygonCollider2D collider2 = rock2.GetComponent<PolygonCollider2D>();
+
+                if(collider1.bounds.Intersects(collider2.bounds))
+                {
+                    colliderCount++;
+                }
+            }
+            if(colliderCount == 0)
+            {
+                score -= 2;
+            }
+            if(colliderCount == 1)
+            {
+                score -= 1;
+            }
+        }
+        Debug.Log("score: " + score);
+        return score;
     }
 
     public float[] FindPondCenter() // get the center coordinates of the rock configuration

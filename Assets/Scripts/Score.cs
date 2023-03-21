@@ -29,7 +29,8 @@ public class Score : MonoBehaviour
 		if ("6_Score_Scene" == SceneManager.GetActiveScene().name)
 		{
 			Debug.Log("planting_score: " + planting_score); 
-			Debug.Log("trash_score: " + trash_score); 
+			Debug.Log("trash_score: " + trash_score);
+			Debug.Log("pond_score: " + pond_score);
 			Debug.Log("koifish_score: " + koifish_score); 
 			Debug.Log("decorations_score: " + decorations_score); 
 
