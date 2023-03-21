@@ -1132,7 +1132,10 @@ MonoBehaviour:
   klSeedPrefab: {fileID: 0}
   pdSeedPrefab: {fileID: 0}
   plSeedPrefab: {fileID: 0}
-  treeSeedPrefab: {fileID: 0}
+  treeSeedPrefab1: {fileID: 0}
+  treeSeedPrefab2: {fileID: 0}
+  treeSeedPrefab3: {fileID: 0}
+  treeSeedPrefab4: {fileID: 0}
   bucketPrefab: {fileID: 0}
   rockPrefab: {fileID: 0}
 --- !u!4 &806473956
@@ -2989,7 +2992,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: -738463861
+  m_SortingLayerID: 584712389
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1919960744

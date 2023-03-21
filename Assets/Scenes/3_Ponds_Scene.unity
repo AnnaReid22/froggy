@@ -388,7 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 288500816}
   - component: {fileID: 288500815}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lily_growth_2 (2)
   m_TagString: lily_blue
   m_Icon: {fileID: 0}
@@ -1258,7 +1258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713356173}
   - component: {fileID: 713356172}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: daisy_growth_2 (1)
   m_TagString: daisy_orange
   m_Icon: {fileID: 0}
@@ -2294,7 +2294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963916868}
   - component: {fileID: 963916867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lily_growth_2 (3)
   m_TagString: lily_purple
   m_Icon: {fileID: 0}
@@ -3065,7 +3065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1306526252}
   - component: {fileID: 1306526251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lily_growth_2 (1)
   m_TagString: lily_orange
   m_Icon: {fileID: 0}
@@ -4009,7 +4009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1600011565}
   - component: {fileID: 1600011564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: daisy_growth_2
   m_TagString: daisy_pink
   m_Icon: {fileID: 0}
@@ -4701,7 +4701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731746838}
   - component: {fileID: 1731746837}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: daisy_growth_2 (2)
   m_TagString: daisy_blue
   m_Icon: {fileID: 0}
@@ -4785,7 +4785,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734892781}
   - component: {fileID: 1734892780}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: daisy_growth_2 (3)
   m_TagString: daisy_purple
   m_Icon: {fileID: 0}
@@ -4937,7 +4937,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: -738463861
+  m_SortingLayerID: 584712389
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1827898387
@@ -5232,7 +5232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2141626747}
   - component: {fileID: 2141626746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lily_growth_2
   m_TagString: lily_pink
   m_Icon: {fileID: 0}
