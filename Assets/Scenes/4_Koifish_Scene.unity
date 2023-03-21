@@ -523,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441003645}
   - component: {fileID: 441003644}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tree_grown_3 (3)
   m_TagString: tree4
   m_Icon: {fileID: 0}
@@ -1518,7 +1518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682421701}
   - component: {fileID: 682421700}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: daisy_bud_3 (2)
   m_TagString: daisy_orange
   m_Icon: {fileID: 0}
@@ -1752,7 +1752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797449835}
   - component: {fileID: 797449834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tree_grown_3 (2)
   m_TagString: tree3
   m_Icon: {fileID: 0}
@@ -2078,7 +2078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 926388422}
   - component: {fileID: 926388421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lily_bud_3 (3)
   m_TagString: lily_orange
   m_Icon: {fileID: 0}
@@ -2246,7 +2246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1163769369}
   - component: {fileID: 1163769368}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tree_grown_3 (1)
   m_TagString: tree2
   m_Icon: {fileID: 0}
@@ -2712,7 +2712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1311795566}
   - component: {fileID: 1311795565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: daisy_bud_3
   m_TagString: daisy_purple
   m_Icon: {fileID: 0}
@@ -2796,7 +2796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487121183}
   - component: {fileID: 1487121182}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lily_bud_3 (2)
   m_TagString: lily_pink
   m_Icon: {fileID: 0}
@@ -3340,6 +3340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030ef2fd6267e6a4491db90bd080694f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sortingOrder: 0
 --- !u!1 &1683898562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,7 +3351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1683898564}
   - component: {fileID: 1683898563}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tree_grown_3
   m_TagString: tree1
   m_Icon: {fileID: 0}
@@ -3569,7 +3570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1722308000}
   - component: {fileID: 1722307999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lily_bud_3
   m_TagString: lily_purple
   m_Icon: {fileID: 0}
@@ -3653,7 +3654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787872519}
   - component: {fileID: 1787872518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: daisy_bud_3 (1)
   m_TagString: daisy_blue
   m_Icon: {fileID: 0}
@@ -3737,7 +3738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829914689}
   - component: {fileID: 1829914688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: daisy_bud_3 (3)
   m_TagString: daisy_pink
   m_Icon: {fileID: 0}
@@ -3888,8 +3889,13 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+<<<<<<< HEAD
   m_SortingLayerID: -738463861
   m_SortingOrder: 2
+=======
+  m_SortingLayerID: 584712389
+  m_SortingOrder: 0
+>>>>>>> 1889424115f26e3eba8c0487995d891bbac6fd99
   m_TargetDisplay: 0
 --- !u!224 &1841191702
 RectTransform:
@@ -4051,7 +4057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894138642}
   - component: {fileID: 1894138641}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lily_bud_3 (1)
   m_TagString: lily_blue
   m_Icon: {fileID: 0}

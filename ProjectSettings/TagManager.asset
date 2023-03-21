@@ -85,8 +85,17 @@ TagManager:
   - name: Foreground
     uniqueID: 3556503435
     locked: 0
+  - name: rocks
+    uniqueID: 711382571
+    locked: 0
   - name: Character
     uniqueID: 4263919609
+    locked: 0
+  - name: front_plants
+    uniqueID: 2855418223
+    locked: 0
+  - name: front_rocks
+    uniqueID: 2842001729
     locked: 0
   - name: UI
     uniqueID: 584712389
