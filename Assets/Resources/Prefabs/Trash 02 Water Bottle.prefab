@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 9102352515184528624}
   - component: {fileID: 9102352515184528626}
   - component: {fileID: 9102352515184528627}
+  - component: {fileID: 1186080841344480570}
   m_Layer: 9
   m_Name: Trash 02 Water Bottle
-  m_TagString: Untagged
+  m_TagString: Bottle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,3 +182,15 @@ MonoBehaviour:
   dragging: 0
   objectName: 
   collectAudio: {fileID: 0}
+--- !u!114 &1186080841344480570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102352515184528635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c09242fb9df4ac08ea51468605f7b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -20,6 +20,13 @@ public class ItemDatabase : MonoBehaviour
     public GameObject treeSeedPrefab;
     public GameObject bucketPrefab;
     public GameObject rockPrefab;
+    // storing key-value pairs for object tags to id's
+    public Dictionary<string, int> values = new Dictionary<string, int>
+    {
+        {"Paper", 0}, {"Bottle", 1}, {"Can", 2}, {"Bamboo Seeds", 3}, {"Blue Daisy Seeds", 4}, {"Blue Lily Seeds", 5},
+        {"Orange Daisy Seeds", 6}, {"Orange Lily Seeds", 7}, {"Pink Daisy Seeds", 8}, {"Pink Lily Seeds", 9},
+        {"Purple Daisy Seeds", 10}, {"Purple Lily Seeds", 11}, {"Tree Seeds", 12}, {"Bucket", 13}, {"Rock", 14}
+    };
 
     private void Awake()
     {
