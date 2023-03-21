@@ -16,17 +16,26 @@ public class PlantSeeds : MonoBehaviour
     private float x_pos, x_cam;
     Camera cam;
 
+    private Inventory inventory;
+
     void Start()
     {
+        inventory = GameObject.FindWithTag("Player").GetComponent<Inventory>();
+        // give the player starting seeds
+        for(int i = 4; i < 16; i++)
+        {
+            inventory.GiveItem(i);
+        }
+
         seeds = new List<GameObject> {GameObject.FindWithTag("lily_purple"), GameObject.FindWithTag("lily_pink"), GameObject.FindWithTag("lily_orange"), 
         GameObject.FindWithTag("lily_blue"), GameObject.FindWithTag("daisy_blue"), GameObject.FindWithTag("daisy_orange"), 
         GameObject.FindWithTag("daisy_pink"), GameObject.FindWithTag("daisy_purple"),
         GameObject.FindWithTag("tree1"), GameObject.FindWithTag("tree2"), GameObject.FindWithTag("tree3"), GameObject.FindWithTag("tree4")}; 
 
-        originalPos = new List<Vector3> {GameObject.FindWithTag("lily_purple").transform.position, GameObject.FindWithTag("lily_pink").transform.position, GameObject.FindWithTag("lily_orange").transform.position, 
-        GameObject.FindWithTag("lily_blue").transform.position, GameObject.FindWithTag("daisy_blue").transform.position, GameObject.FindWithTag("daisy_orange").transform.position, 
-        GameObject.FindWithTag("daisy_pink").transform.position, GameObject.FindWithTag("daisy_purple").transform.position, 
-        GameObject.FindWithTag("tree1").transform.position, GameObject.FindWithTag("tree2").transform.position, GameObject.FindWithTag("tree3").transform.position, GameObject.FindWithTag("tree4").transform.position}; 
+        //originalPos = new List<Vector3> {GameObject.FindWithTag("lily_purple").transform.position, GameObject.FindWithTag("lily_pink").transform.position, GameObject.FindWithTag("lily_orange").transform.position, 
+        //GameObject.FindWithTag("lily_blue").transform.position, GameObject.FindWithTag("daisy_blue").transform.position, GameObject.FindWithTag("daisy_orange").transform.position, 
+        //GameObject.FindWithTag("daisy_pink").transform.position, GameObject.FindWithTag("daisy_purple").transform.position, 
+        //GameObject.FindWithTag("tree1").transform.position, GameObject.FindWithTag("tree2").transform.position, GameObject.FindWithTag("tree3").transform.position, GameObject.FindWithTag("tree4").transform.position}; 
 
 
         sprouts = new List<GameObject> {GameObject.FindWithTag("tree_sprout_1"), GameObject.FindWithTag("tree_sprout_2"), GameObject.FindWithTag("tree_sprout_3"),  GameObject.FindWithTag("tree_sprout_4"),
@@ -34,8 +43,14 @@ public class PlantSeeds : MonoBehaviour
         GameObject.FindWithTag("orange_lily_sprout"), GameObject.FindWithTag("pink_lily_sprout"), GameObject.FindWithTag("blue_lily_sprout"), GameObject.FindWithTag("purple_lily_sprout")}; 
         
         foreach (GameObject sprout in sprouts) {
-            sprout.SetActive(false); 
+            sprout.SetActive(false);
         }
+
+        // when seeds are in inventory
+        //foreach(GameObject seed in seeds)
+        //{
+        //    seed.SetActive(false);
+        //}
 
         flowers = new List<string> {"lily_purple", "lily_pink", "lily_orange", "lily_blue", "daisy_blue", "daisy_orange", "daisy_pink", "daisy_purple"}; 
         trees = new List<string> {"tree1", "tree2", "tree3", "tree4"}; 
@@ -46,18 +61,24 @@ public class PlantSeeds : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < seeds.Count; i++) {
-            if (seeds[i].transform.position.y > 2.75) {
-                x_pos= originalPos[i].x;  
-                x_cam = cam.transform.position.x; 
-                seeds[i].transform.position = new Vector3(x_pos + x_cam, seeds[i].transform.position.y, 0); 
-            }
-        }             
+        //for (int i = 0; i < seeds.Count; i++) {
+        //    if (seeds[i].transform.position.y > 2.75) {
+        //        x_pos= originalPos[i].x;  
+        //        x_cam = cam.transform.position.x; 
+        //        seeds[i].transform.position = new Vector3(x_pos + x_cam, seeds[i].transform.position.y, 0); 
+        //    }
+        //}             
     }
 
-    void plantSeeds() { 
+    public void plantSeeds() { 
+        // get seed objects since they didn't exist outside of inventory
+        seeds = new List<GameObject> {GameObject.FindWithTag("lily_purple"), GameObject.FindWithTag("lily_pink"), GameObject.FindWithTag("lily_orange"), 
+        GameObject.FindWithTag("lily_blue"), GameObject.FindWithTag("daisy_blue"), GameObject.FindWithTag("daisy_orange"), 
+        GameObject.FindWithTag("daisy_pink"), GameObject.FindWithTag("daisy_purple"),
+        GameObject.FindWithTag("tree1"), GameObject.FindWithTag("tree2"), GameObject.FindWithTag("tree3"), GameObject.FindWithTag("tree4")}; 
+
         foreach (GameObject seed in seeds) {
-            if (flowers.Contains(seed.tag)) {
+            if (seed != null && flowers.Contains(seed.tag)) {
                 if (seed.tag == "daisy_orange") {
                     position = seed.transform.position;
                     seed.SetActive(false); 
@@ -139,7 +160,7 @@ public class PlantSeeds : MonoBehaviour
                         Debug.Log("Planting Score: " + Score.planting_score);
                     }
                 }
-            } else if (trees.Contains(seed.tag)) {
+            } else if (seed != null && trees.Contains(seed.tag)) {
                 if (seed.tag == "tree1") {
                     position = seed.transform.position;
                     seed.SetActive(false); 
@@ -183,7 +204,7 @@ public class PlantSeeds : MonoBehaviour
                     }
                 } 
             } else {
-                seed.SetActive(false); 
+                if(seed != null){seed.SetActive(false);}
             }
         }
     }
