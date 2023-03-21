@@ -38,6 +38,10 @@ public class DragAndDrop : MonoBehaviour {
         Physics2D.IgnoreLayerCollision(10, 9);
 
         cam = Camera.main;
+        if(SceneManager.GetActiveScene().name == "1_Trash_Scene")
+        {
+            collectAudio = GameObject.Find("positive_sound_froggy").GetComponent<AudioSource>();
+        }
     }
 
     void Update() {

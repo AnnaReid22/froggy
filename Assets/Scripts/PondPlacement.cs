@@ -9,23 +9,32 @@ public class PondPlacement : MonoBehaviour
     public GameObject pond; // finished pond object, initially not active in scene
     private Renderer pondImage; // sprite renderer of the completed pond
     public float[] centerCoord; // coordinates of center of finished pond
+    private Inventory inventory; // player inventory
 
     // Start is called before the first frame update
     void Start()
     {
+        inventory = GameObject.FindWithTag("Player").GetComponent<Inventory>();
+        // give bucket item to player
+        inventory.GiveItem("Water Bucket");
+
         pondImage = this.GetComponent<Renderer>();
         pondImage.enabled = false;
         rocks = GameObject.FindGameObjectsWithTag("Rock");
         pond = GameObject.FindWithTag("FinishedPond");
-        bucket = GameObject.FindWithTag("Bucket");
     }
 
     // Update is called once per frame
     void Update()
     {
-        centerCoord = FindPondCenter();
-        if (bucket.transform.position.y < 0)
+        bucket = GameObject.FindWithTag("Bucket");
+        // update rocks list
+        rocks = GameObject.FindGameObjectsWithTag("Rock");
+
+        if (bucket != null && bucket.transform.position.y < 0)
         {
+            Score.pond_score = GetScore(rocks);
+            centerCoord = FindPondCenter();
             foreach (GameObject rock in rocks)
             {
                 rock.SetActive(false);
@@ -35,6 +44,38 @@ public class PondPlacement : MonoBehaviour
             pondImage.enabled = true;
             bucket.SetActive(false);
         }
+    }
+
+    public int GetScore(GameObject[] rocks)
+    {
+        int score = 30; // total possible score
+
+        foreach (GameObject rock1 in rocks)
+        {
+            int colliderCount = 0;
+            PolygonCollider2D collider1 = rock1.GetComponent<PolygonCollider2D>();
+            foreach (GameObject rock2 in rocks)
+            {
+                if (rock1 == rock2){continue;}
+                
+                PolygonCollider2D collider2 = rock2.GetComponent<PolygonCollider2D>();
+
+                if(collider1.bounds.Intersects(collider2.bounds))
+                {
+                    colliderCount++;
+                }
+            }
+            if(colliderCount == 0)
+            {
+                score -= 2;
+            }
+            if(colliderCount == 1)
+            {
+                score -= 1;
+            }
+        }
+        Debug.Log("score: " + score);
+        return score;
     }
 
     public float[] FindPondCenter() // get the center coordinates of the rock configuration

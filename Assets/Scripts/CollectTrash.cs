@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// not currently being used
 public class CollectTrash : MonoBehaviour
 {
 

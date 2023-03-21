@@ -10,9 +10,6 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {   
-        GiveItem("Rock");
-        GiveItem(1);
-        GiveItem(3);
     }
 
     // function to give an item to the player

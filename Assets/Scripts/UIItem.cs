@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 // inspired and modified from https://medium.com/@yonem9/create-an-unity-inventory-part-4-display-items-in-ui-6cdac8f734b7
 
-public class UIItem : MonoBehaviour, IPointerClickHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public Item item;
     private Image image;
@@ -62,24 +62,24 @@ public class UIItem : MonoBehaviour, IPointerClickHandler, IDragHandler, IBeginD
         image.raycastTarget = true;
     }
     
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if(this.item != null)
-        {
-            if(selected.item != null)
-            {
-                // make a copy of the selected item
-                Item copy = new Item(selected.item);
-                selected.UpdateItem(this.item);
-                // save item into inventory
-                UpdateItem(copy);
-            }
-            else // if there was nothing selected before clicking
-            {
-                selected.UpdateItem(this.item);
-                // clear inventory slot that item was on
-                UpdateItem(null);
-            }
-        }
-    }
+    //public void OnPointerClick(PointerEventData eventData)
+    //{
+    //    if(this.item != null)
+    //    {
+    //        if(selected.item != null)
+    //        {
+    //            // make a copy of the selected item
+    //            Item copy = new Item(selected.item);
+    //            selected.UpdateItem(this.item);
+    //            // save item into inventory
+    //            UpdateItem(copy);
+    //        }
+    //        else // if there was nothing selected before clicking
+    //        {
+    //            selected.UpdateItem(this.item);
+    //            // clear inventory slot that item was on
+    //            UpdateItem(null);
+    //        }
+    //    }
+    //}
 }
