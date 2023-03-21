@@ -32,6 +32,10 @@ TagManager:
   - FinishedPond
   - tree_sprout_4
   - tree4
+  - baby_fish
+  - adult_fish
+  - puddle1
+  - puddle2
   layers:
   - Default
   - TransparentFX

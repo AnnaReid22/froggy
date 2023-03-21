@@ -30,7 +30,8 @@ public class PondPlacement : MonoBehaviour
             {
                 rock.SetActive(false);
             }
-            this.transform.position = new Vector2(centerCoord[0], centerCoord[1]);
+            this.transform.position = new Vector3(centerCoord[0], centerCoord[1], 0);
+            locations.pond_loc = this.transform.position; 
             pondImage.enabled = true;
             bucket.SetActive(false);
         }

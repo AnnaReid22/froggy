@@ -60,6 +60,11 @@ public class DragAndDropFish : MonoBehaviour {
         if (Input.GetMouseButtonUp(0)) {
             canMove = false;
             dragging = false;
+            if (this.tag == "baby_fish") { 
+                locations.baby_fish_loc_2 = this.transform.position; 
+            } else if (this.tag == "adult_fish") {
+                locations.adult_fish_loc_2 = this.transform.position;
+            }
         }
     }
 
