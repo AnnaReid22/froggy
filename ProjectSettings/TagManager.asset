@@ -35,6 +35,10 @@ TagManager:
   - Bottle
   - Can
   - Paper
+  - baby_fish
+  - adult_fish
+  - puddle1
+  - puddle2
   layers:
   - Default
   - TransparentFX

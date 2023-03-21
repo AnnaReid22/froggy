@@ -17,12 +17,20 @@ public class locations : MonoBehaviour
     public static Vector3 tree2; 
     public static Vector3 tree3; 
     public static Vector3 tree4; 
+    public static Vector3 pond_loc; 
+    public static Vector3 puddle1_loc; 
+    public static Vector3 puddle2_loc;
+    public static Vector3 baby_fish_loc_1; // need to be put in pond 
+    public static Vector3 adult_fish_loc_1;   
+    public static Vector3 baby_fish_loc_2; // in pond
+    public static Vector3 adult_fish_loc_2; 
 
     private List<GameObject> plants;
+    private GameObject pond, puddle1, puddle2, baby_fish, adult_fish;
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
             plants = new List<GameObject> {GameObject.FindWithTag("lily_purple"), GameObject.FindWithTag("lily_pink"), GameObject.FindWithTag("lily_orange"), 
                 GameObject.FindWithTag("lily_blue"), GameObject.FindWithTag("daisy_blue"), GameObject.FindWithTag("daisy_orange"), 
                 GameObject.FindWithTag("daisy_pink"), GameObject.FindWithTag("daisy_purple"),
@@ -103,6 +111,54 @@ public class locations : MonoBehaviour
                         plant.SetActive(false); 
                     }
                 }
+            }
+
+            if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name || "5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
+                pond = GameObject.FindWithTag("FinishedPond"); 
+                pond.transform.position = pond_loc;
+            }
+
+            if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name) {
+                puddle1 = GameObject.FindWithTag("puddle1");
+                puddle2 = GameObject.FindWithTag("puddle2");
+                adult_fish = GameObject.FindWithTag("adult_fish");
+                baby_fish = GameObject.FindWithTag("baby_fish");
+
+                if (pond_loc.x - 14 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 14, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 14, pond_loc.y, 0);
+                }  else if (pond_loc.x - 10 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 10, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 10, pond_loc.y, 0);
+                } else if (pond_loc.x - 5 >= -18) {
+                    puddle1.transform.position = new Vector3(pond_loc.x - 5, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x - 5, pond_loc.y, 0);
+                } else {
+                    puddle1.transform.position = new Vector3(pond_loc.x + 28, pond_loc.y, 0);
+                    adult_fish.transform.position = new Vector3(pond_loc.x + 28, pond_loc.y, 0);
+                }
+
+                if (pond_loc.x + 14 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 14, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 14, pond_loc.y, 0);
+                } else if (pond_loc.x + 10 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 10, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 10, pond_loc.y, 0);
+                } else if (pond_loc.x + 5 <= 18) {
+                    puddle2.transform.position = new Vector3(pond_loc.x + 5, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x + 5, pond_loc.y, 0);
+                } else {
+                    puddle2.transform.position = new Vector3(pond_loc.x - 28, pond_loc.y, 0);
+                    baby_fish.transform.position = new Vector3(pond_loc.x - 28, pond_loc.y, 0);   
+                }
+            }
+
+            if ("5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
+                adult_fish = GameObject.FindWithTag("adult_fish");
+                baby_fish = GameObject.FindWithTag("baby_fish");
+
+                adult_fish.transform.position = adult_fish_loc_2; 
+                baby_fish.transform.position = baby_fish_loc_2; 
             }
     }
 
