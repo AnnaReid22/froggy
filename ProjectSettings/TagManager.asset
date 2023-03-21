@@ -91,3 +91,6 @@ TagManager:
   - name: UI
     uniqueID: 584712389
     locked: 0
+  - name: front_plants
+    uniqueID: 2855418223
+    locked: 0
