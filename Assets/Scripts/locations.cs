@@ -43,7 +43,7 @@ public class locations : MonoBehaviour
                 GameObject.FindWithTag("tree1"), GameObject.FindWithTag("tree2"), GameObject.FindWithTag("tree3"), GameObject.FindWithTag("tree4")}; 
 
             if ("3_Ponds_Scene" == SceneManager.GetActiveScene().name) {
-                pond_loc = new Vector3(0, 0, 0);
+                pond_loc = new Vector3(0, -1.75f, 0);
             } 
             
             if ("4_Koifish_Scene" == SceneManager.GetActiveScene().name || "5_Decorate_Scene" == SceneManager.GetActiveScene().name) {
@@ -171,7 +171,7 @@ public class locations : MonoBehaviour
                 }
 
                 // put this in plant seeds
-                if (plant.transform.position.y < -1.12) { 
+                if (plant.transform.position.y < -1.2) { 
                     sprite = plant.GetComponent<SpriteRenderer>(); 
                     sprite.sortingOrder = sortingOrder; 
                     sprite.sortingLayerName = front_plants; 
