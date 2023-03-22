@@ -32,6 +32,9 @@ public class DragAndDropFish : MonoBehaviour {
         Physics2D.IgnoreLayerCollision(10, 9);
 
         cam = Camera.main;
+
+        locations.notPlacedAdult = true;
+        locations.notPlacedBaby = true;  
     }
 
     void Update() {
@@ -75,6 +78,11 @@ public class DragAndDropFish : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
+        if (this.tag == "baby_fish") { 
+            locations.notPlacedBaby = false; 
+        } else if (this.tag == "adult_fish") {
+            locations.notPlacedAdult = false; 
+        }
         Score.koifish_score += 10;
         Debug.Log("Koi Score Up: " + Score.koifish_score);
         goodAudio.Play();
@@ -87,6 +95,11 @@ public class DragAndDropFish : MonoBehaviour {
 	
 	void OnCollisionExit2D(Collision2D col)
 	{
+        if (this.tag == "baby_fish") { 
+            locations.notPlacedAdult = true; 
+        } else if (this.tag == "adult_fish") {
+            locations.notPlacedBaby = true; 
+        } 
 		Score.koifish_score -= 10;
 		displayText.SetActive(false);
 		Debug.Log("Koi Score Down: " + Score.koifish_score);

@@ -26,6 +26,9 @@ public class locations : MonoBehaviour
     public static Vector3 adult_fish_loc_2; 
     public static Vector3 rock_loc; 
 
+    public static bool notPlacedAdult;
+    public static bool notPlacedBaby;  
+
     private List<GameObject> plants;
     private GameObject[] rocks; 
     private GameObject pond, puddle1, puddle2, baby_fish, adult_fish;
@@ -90,8 +93,17 @@ public class locations : MonoBehaviour
                 adult_fish = GameObject.FindWithTag("adult_fish");
                 baby_fish = GameObject.FindWithTag("baby_fish");
 
-                adult_fish.transform.position = adult_fish_loc_2; 
-                baby_fish.transform.position = baby_fish_loc_2; 
+                if (notPlacedAdult == true) {
+                    adult_fish.SetActive(false);
+                } else { 
+                    adult_fish.transform.position = adult_fish_loc_2; 
+                }
+
+                if (notPlacedBaby == true) {
+                    baby_fish.SetActive(false);
+                } else { 
+                    baby_fish.transform.position = baby_fish_loc_2; 
+                }
             }
 
             foreach (GameObject plant in plants) {
@@ -190,7 +202,7 @@ public class locations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pond_loc != new Vector3(0, 0, 0)) { 
+        if (pond_loc != new Vector3(0, -1.75f, 0)) { 
             foreach (GameObject plant in plants) {
                 Debug.Log(plant.transform.position.x); 
                 if ((plant.transform.position.x < pond_loc.x - 3.25) || (plant.transform.position.x > pond_loc.x + 3.25)) {
