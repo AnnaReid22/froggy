@@ -202,7 +202,7 @@ public class locations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pond_loc != new Vector3(0, 0, 0)) { 
+        if (pond_loc != new Vector3(0, -1.75f, 0)) { 
             foreach (GameObject plant in plants) {
                 Debug.Log(plant.transform.position.x); 
                 if ((plant.transform.position.x < pond_loc.x - 3.25) || (plant.transform.position.x > pond_loc.x + 3.25)) {
