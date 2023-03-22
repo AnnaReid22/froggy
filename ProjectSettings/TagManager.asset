@@ -39,6 +39,12 @@ TagManager:
   - adult_fish
   - puddle1
   - puddle2
+  - chair
+  - pot1
+  - pot2
+  - shovel
+  - table
+  - fence
   layers:
   - Default
   - TransparentFX

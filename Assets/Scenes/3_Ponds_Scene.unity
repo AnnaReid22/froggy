@@ -4079,6 +4079,12 @@ MonoBehaviour:
   treeSeedPrefab4: {fileID: 3323834286821941589, guid: 81d0378f211ed46cc944a8a9f6ba24ab, type: 3}
   bucketPrefab: {fileID: 7941748761135113710, guid: 85585e03e25724b8987e82d881dad7b2, type: 3}
   rockPrefab: {fileID: 4225563503331628654, guid: 57008660fe27e4f2fa10ab11fc8a5bdc, type: 3}
+  chairPrefab: {fileID: 0}
+  fencePrefab: {fileID: 0}
+  pot1Prefab: {fileID: 0}
+  pot2Prefab: {fileID: 0}
+  shovelPrefab: {fileID: 0}
+  tablePrefab: {fileID: 0}
 --- !u!4 &1462644011
 Transform:
   m_ObjectHideFlags: 0
