@@ -23,13 +23,19 @@ public class ItemDatabase : MonoBehaviour
     public GameObject treeSeedPrefab4;
     public GameObject bucketPrefab;
     public GameObject rockPrefab;
+	public GameObject chairPrefab;
+	public GameObject fencePrefab;
+	public GameObject pot1Prefab;
+	public GameObject pot2Prefab;
+	public GameObject shovelPrefab;
+	public GameObject tablePrefab;
     // storing key-value pairs for object tags to id's
     public Dictionary<string, int> values = new Dictionary<string, int>
     {
         {"Paper", 0}, {"Bottle", 1}, {"Can", 2}, {"Bamboo Seeds", 3}, {"daisy_blue", 4}, {"lily_blue", 5},
         {"daisy_orange", 6}, {"lily_orange", 7}, {"daisy_pink", 8}, {"lily_pink", 9},
         {"daisy_purple", 10}, {"lily_purple", 11}, {"tree1", 12}, {"tree2", 13}, {"tree3", 14}, {"tree4", 15},
-        {"Bucket", 16}, {"Rock", 17}
+        {"Bucket", 16}, {"Rock", 17}, {"chair", 18}, {"fence", 19}, {"pot1", 20}, {"pot2", 21}, {"shovel", 22}, {"table", 23}
     };
 
     private void Awake()
@@ -72,7 +78,14 @@ public class ItemDatabase : MonoBehaviour
             new Item(15, "Tree Seeds", "Seeds that will grow a flowering tree.", "tree_seeds", "plants/seeds", treeSeedPrefab4),
             // pond items
             new Item(16, "Water Bucket", "Bucket filled with freshwater.", "Bucket", "pond", bucketPrefab),
-            new Item(17, "Rock", "Heavy rock.", "Rock", "pond", rockPrefab)
+            new Item(17, "Rock", "Heavy rock.", "Rock", "pond", rockPrefab),
+			//decorate items
+			new Item(18, "chair", "chair.", "chair", "decorations", chairPrefab),
+			new Item(19, "fence", "fence.", "fence", "decorations", fencePrefab),
+			new Item(20, "pot1", "pot1.", "pot1", "decorations", pot1Prefab),
+			new Item(21, "pot2", "pot2.", "pot2", "decorations", pot2Prefab),
+			new Item(22, "shovel", "shovel.", "shovel", "decorations", shovelPrefab),
+			new Item(23, "table", "table.", "table", "decorations", tablePrefab)
         };
     }
 }
